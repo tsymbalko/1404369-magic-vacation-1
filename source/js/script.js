@@ -26,5 +26,5 @@ window.onload = () => {
   // TODO remove setTimeout
   setTimeout(() => {
     document.body.classList.add(`page--loaded`);
-  }, 500);
+  }, 1000);
 };
