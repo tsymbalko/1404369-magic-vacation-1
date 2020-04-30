@@ -97,6 +97,7 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
+  transition: opacity 0.18s ease-in-out;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
