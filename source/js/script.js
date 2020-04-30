@@ -21,3 +21,10 @@ social();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
+
+window.onload = () => {
+  // TODO remove setTimeout
+  setTimeout(() => {
+    document.body.classList.add(`page--loaded`);
+  }, 1000);
+};

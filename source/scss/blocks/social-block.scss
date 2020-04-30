@@ -17,6 +17,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition: 0.3s ease-in-out;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -27,7 +28,9 @@
   }
 
   &::before {
-    @include center;
+    position: absolute;
+    top: 0;
+    left: 0;
     content: "";
     width: 100%;
     height: 100%;
@@ -35,6 +38,12 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: 0.3s ease-in-out;
+    transform: scale(1);
+
+    .page--loaded & {
+      animation: zoomIn 0.4s;
+    }
   }
 
   svg {
@@ -44,14 +53,15 @@
     height: 2.2rem;
   }
 
+  &:hover {
+    &::before {
+      transform: scale(1.12);
+    }
+  }
+
   &:hover,
   .social-block--active & {
     color: $c-purple;
-
-    &::before {
-      width: 112.5%;
-      height: 112.5%;
-    }
   }
 
   &:focus {
@@ -73,8 +83,6 @@
     color: $c-light;
 
     &::before {
-      width: 100%;
-      height: 100%;
       background-color: $c-purple;
       border-color: $c-purple;
     }
@@ -89,6 +97,7 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
+  transition: opacity 0.18s ease-in-out;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -168,6 +177,9 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  transition: 0.25s ease-in-out;
+  transform: translateY(6px);
+  opacity: 0;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -200,6 +212,19 @@
     color: $c-purple;
     background-color: $c-light;
     border-color: $c-light;
+  }
+
+  .social-block--active & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .social-block li:nth-child(2) & {
+    transition-delay: 0.1s;
+  }
+
+  .social-block li:nth-child(3) & {
+    transition-delay: 0.2s;
   }
 
   svg {
