@@ -48,10 +48,14 @@
 
 @keyframes animationFromControl {
   0% {
-    width: 0;
+    max-width: 0;
+  }
+
+  90% {
+    max-width: calc(100% - 21rem);
   }
 
   100% {
-    width: calc(100% - 21rem);
+    max-width: none;
   }
 }
