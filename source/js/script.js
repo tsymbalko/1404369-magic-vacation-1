@@ -28,3 +28,7 @@ window.onload = () => {
     document.body.classList.add(`page--loaded`);
   }, 1000);
 };
+
+document.querySelector(`.js-last-rule`).addEventListener(`animationend`, () => {
+  document.querySelector(`.rules__link`).classList.add(`rules__link--active`);
+});
