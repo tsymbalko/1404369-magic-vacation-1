@@ -26,8 +26,7 @@ fullPageScroll.init();
 const animationTexts = [
   {
     selector: `.intro__title`,
-    timer: 800,
-    delay: 0
+    timer: 800
   },
   {
     selector: `.intro__date`,
