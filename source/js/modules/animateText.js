@@ -34,4 +34,3 @@ function createElement(letter, timeOffset, timer) {
   span.style.animationDuration = `${timer}ms`;
   return span;
 }
-
