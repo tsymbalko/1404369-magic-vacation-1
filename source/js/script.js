@@ -8,6 +8,7 @@ import result from './modules/result.js';
 import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
+import prePareText from './modules/animateText';
 
 // init modules
 mobileHeight();
@@ -22,11 +23,36 @@ social();
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
 
+const animationTexts = [
+  {
+    selector: `.intro__title`,
+    timer: 800
+  },
+  {
+    selector: `.intro__date`,
+    timer: 500,
+    delay: 1000
+  },
+  {
+    selector: `.slider__item-title`
+  },
+  {
+    selector: `.prizes__title`
+  },
+  {
+    selector: `.rules__title`
+  },
+  {
+    selector: `.game__title`
+  }
+];
+
+animationTexts.forEach(({selector, timer, delay}) => {
+  prePareText(selector, timer, delay);
+});
+
 window.onload = () => {
-  // TODO remove setTimeout
-  setTimeout(() => {
-    document.body.classList.add(`page--loaded`);
-  }, 1000);
+  document.body.classList.add(`page--loaded`);
 };
 
 document.querySelector(`.js-last-rule`).addEventListener(`animationend`, () => {
