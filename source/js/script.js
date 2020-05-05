@@ -58,4 +58,3 @@ window.onload = () => {
 document.querySelector(`.js-last-rule`).addEventListener(`animationend`, () => {
   document.querySelector(`.rules__link`).classList.add(`rules__link--active`);
 });
-
