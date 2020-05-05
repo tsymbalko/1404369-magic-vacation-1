@@ -23,15 +23,13 @@ social();
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
 
-const animationTopScreenTextLine = new AccentTypographyBuild(`.intro__title`, 800, `active-text`, `transform`);
-const animationTopScreenTextLine2 = new AccentTypographyBuild(`.intro__date`, 500, `active-text`, `transform`);
+// eslint-disable-next-line
+const animationTopScreenTextLine = new AccentTypographyBuild(`.intro__title`, 800, `active-text`, `transform`, 0);
+// eslint-disable-next-line
+const animationTopScreenTextLine2 = new AccentTypographyBuild(`.intro__date`, 500, `active-text`, `transform`, 1000);
 
 window.onload = () => {
   document.body.classList.add(`page--loaded`);
-  animationTopScreenTextLine.runAnimation();
-  setTimeout(() => {
-    animationTopScreenTextLine2.runAnimation();
-  }, 1000);
 };
 
 document.querySelector(`.js-last-rule`).addEventListener(`animationend`, () => {

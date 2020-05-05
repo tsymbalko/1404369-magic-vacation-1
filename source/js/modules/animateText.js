@@ -3,7 +3,8 @@ export default class AccentTypographyBuild {
       elementSelector,
       timer,
       classForActivate,
-      property
+      property,
+      delay
   ) {
 
     this._elementSelector = elementSelector;
@@ -11,7 +12,7 @@ export default class AccentTypographyBuild {
     this._classForActivate = classForActivate;
     this._property = property;
     this._element = document.querySelector(this._elementSelector);
-    this._timeOffset = 20;
+    this._timeOffset = delay + 20;
 
     this.prePareText();
   }
@@ -19,7 +20,7 @@ export default class AccentTypographyBuild {
   createElement(letter, index) {
     const span = document.createElement(`span`);
     span.textContent = letter;
-    span.style.transition = `${this._property} ${this._timer}ms ease-in ${this._timeOffset}ms`;
+    span.style.animationDelay = `${this._timeOffset}ms`;
     if (index % 2 === 0) {
       this._timeOffset += 40;
     } else {
@@ -40,7 +41,7 @@ export default class AccentTypographyBuild {
         return fragment;
       }, document.createDocumentFragment());
       const wordContainer = document.createElement(`span`);
-      wordContainer.classList.add(`text__word`);
+      wordContainer.classList.add(`word`);
       wordContainer.appendChild(wordElement);
       fragmentParent.appendChild(wordContainer);
       return fragmentParent;
@@ -48,16 +49,5 @@ export default class AccentTypographyBuild {
 
     this._element.innerHTML = ``;
     this._element.appendChild(content);
-  }
-
-  runAnimation() {
-    if (!this._element) {
-      return;
-    }
-    this._element.classList.add(this._classForActivate);
-  }
-
-  destroyAnimation() {
-    this._element.classList.remove(this._classForActivate);
   }
 }
