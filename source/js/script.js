@@ -8,7 +8,7 @@ import result from './modules/result.js';
 import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
-import AccentTypographyBuild from './modules/animateText';
+import prePareText from './modules/animateText';
 
 // init modules
 mobileHeight();
@@ -23,10 +23,34 @@ social();
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
 
-// eslint-disable-next-line
-const animationTopScreenTextLine = new AccentTypographyBuild(`.intro__title`, 800, `active-text`, `transform`, 0);
-// eslint-disable-next-line
-const animationTopScreenTextLine2 = new AccentTypographyBuild(`.intro__date`, 500, `active-text`, `transform`, 1000);
+const animationTexts = [
+  {
+    selector: `.intro__title`,
+    timer: 800,
+    delay: 0
+  },
+  {
+    selector: `.intro__date`,
+    timer: 500,
+    delay: 1000
+  },
+  {
+    selector: `.slider__item-title`
+  },
+  {
+    selector: `.prizes__title`
+  },
+  {
+    selector: `.rules__title`
+  },
+  {
+    selector: `.game__title`
+  }
+];
+
+animationTexts.forEach(({selector, timer, delay}) => {
+  prePareText(selector, timer, delay);
+});
 
 window.onload = () => {
   document.body.classList.add(`page--loaded`);
