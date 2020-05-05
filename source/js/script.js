@@ -8,6 +8,7 @@ import result from './modules/result.js';
 import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
+import AccentTypographyBuild from './modules/animateText';
 
 // init modules
 mobileHeight();
@@ -22,13 +23,18 @@ social();
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
 
+const animationTopScreenTextLine = new AccentTypographyBuild(`.intro__title`, 800, `active-text`, `transform`);
+const animationTopScreenTextLine2 = new AccentTypographyBuild(`.intro__date`, 500, `active-text`, `transform`);
+
 window.onload = () => {
-  // TODO remove setTimeout
+  document.body.classList.add(`page--loaded`);
+  animationTopScreenTextLine.runAnimation();
   setTimeout(() => {
-    document.body.classList.add(`page--loaded`);
+    animationTopScreenTextLine2.runAnimation();
   }, 1000);
 };
 
 document.querySelector(`.js-last-rule`).addEventListener(`animationend`, () => {
   document.querySelector(`.rules__link`).classList.add(`rules__link--active`);
 });
+
