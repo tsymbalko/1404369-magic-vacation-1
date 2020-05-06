@@ -8,7 +8,7 @@ import result from './modules/result.js';
 import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
-import prePareText from './modules/animateText';
+import prepareText from './modules/animateText';
 
 // init modules
 mobileHeight();
@@ -26,18 +26,18 @@ fullPageScroll.init();
 const animationTexts = [
   {
     selector: `.intro__title`,
-    timer: 800
+    delay: 600
   },
   {
     selector: `.intro__date`,
-    timer: 500,
-    delay: 1000
+    delay: 1600
   },
   {
     selector: `.slider__item-title`
   },
   {
-    selector: `.prizes__title`
+    selector: `.prizes__title`,
+    delay: 600
   },
   {
     selector: `.rules__title`
@@ -48,7 +48,7 @@ const animationTexts = [
 ];
 
 animationTexts.forEach(({selector, timer, delay}) => {
-  prePareText(selector, timer, delay);
+  prepareText(selector, timer, delay);
 });
 
 window.onload = () => {

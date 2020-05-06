@@ -253,7 +253,7 @@
     display: block;
     color: inherit;
     padding: 0 0.5em 0.5em;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.35s ease-in-out;
 
     &::after {
       display: block;
@@ -264,7 +264,7 @@
       height: 2px;
       background-color: $c-light;
       left: 0;
-      transition: transform 0.3s ease-in-out, background-color 0.25s ease-in-out, transform-origin steps(2, start);
+      transition: transform 0.35s ease-in-out, background-color 0.35s ease-in-out, transform-origin steps(2, start);
       transform-origin: 100% 50%;
       transform: scaleX(0);
 

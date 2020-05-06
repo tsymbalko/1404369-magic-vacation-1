@@ -1,7 +1,7 @@
 @keyframes fadeInRight {
   0% {
     opacity: 0;
-    transform: translateX(40px);
+    transform: translateX(4rem);
   }
 
   100% {
@@ -13,7 +13,7 @@
 @keyframes fadeInDown {
   0% {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(4rem);
   }
 
   100% {
@@ -53,5 +53,39 @@
 
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes animationPrevControl {
+  0% {
+    opacity: 0;
+    transform: translateX(-6rem) rotate(-360deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes animationNextControl {
+  0% {
+    opacity: 0;
+    transform: translateX(6rem) rotate(360deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes animationText {
+  0% {
+    transform: translate3d(0, 120%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
   }
 }

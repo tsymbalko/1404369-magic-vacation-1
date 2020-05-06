@@ -61,7 +61,7 @@
   line-height: 1.2;
 
   .active & {
-    animation: fadeInDown 0.4s both;
+    animation: fadeInDown 1s both;
     animation-delay: 0.5s;
   }
 
@@ -129,24 +129,31 @@
   padding-left: 6.5rem;
   break-inside: avoid;
 
+  .active &:nth-child(1) {
+    &::before,
+    p {
+      animation-delay: 1.5s;
+    }
+  }
+
   .active &:nth-child(2) {
     &::before,
     p {
-      animation-delay: 0.4s;
+      animation-delay: 1.9s;
     }
   }
 
   .active &:nth-child(3) {
     &::before,
     p {
-      animation-delay: 0.8s;
+      animation-delay: 2.3s;
     }
   }
 
   .active &:nth-child(4) {
     &::before,
     p {
-      animation-delay: 1.2s;
+      animation-delay: 2.7s;
     }
   }
 
@@ -226,16 +233,6 @@
   bottom: 6rem;
   right: 5.6rem;
   border-radius: 3.5rem;
-}
-
-.rules__link {
-  display: inline-block;
-  color: transparent;
-  transform: translateX(100%);
-
-  &--active {
-    animation: rules-link 0.8s both;
-  }
 
   @media (min-width: $stop-scaling) {
     bottom: 60px;
@@ -255,6 +252,17 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     bottom: 2rem;
     right: 1.5rem;
+  }
+}
+
+.rules__link {
+  display: inline-block;
+  width: 100%;
+  color: transparent;
+  transform: translateX(100%);
+
+  &--active {
+    animation: rules-link 0.8s both;
   }
 }
 

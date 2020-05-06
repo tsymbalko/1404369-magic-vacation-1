@@ -5,21 +5,9 @@
 }
 
 .word > span {
-  //transform: translate3d(0, 120%, 0);
   display: inline-block;
 }
 
 .active .word > span {
-  animation: test 0.8s ease-in-out both;
-}
-
-
-@keyframes test {
-  0% {
-    transform: translate3d(0, 120%, 0);
-  }
-
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
+  animation: animationText 0.8s ease-in-out both;
 }
