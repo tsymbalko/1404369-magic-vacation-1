@@ -1,19 +1,19 @@
-export default function prePareText(elementSelector, timer = 500, delay = 0) {
-  let timeOffset = delay + 20;
+export default function prepareText(elementSelector, timer = 400, delay = 0) {
+  let timeOffset = delay + 100;
   const element = document.querySelector(elementSelector);
   if (!element) {
     return;
   }
-  const text = element.textContent.trim().split(` `).filter((latter)=>latter !== ``);
+  const text = element.textContent.trim().split(` `).filter((letter)=>letter !== ``);
 
   const content = text.reduce((fragmentParent, word) => {
-    const wordElement = Array.from(word).reduce((fragment, latter, index) => {
+    const wordElement = Array.from(word).reduce((fragment, letter, index) => {
       if (index % 2 === 0) {
-        timeOffset += 40;
+        timeOffset += 200;
       } else {
-        timeOffset -= 20;
+        timeOffset -= 100;
       }
-      fragment.appendChild(createElement(latter, timeOffset, timer));
+      fragment.appendChild(createElement(letter, timeOffset, timer));
       return fragment;
     }, document.createDocumentFragment());
     const wordContainer = document.createElement(`span`);
