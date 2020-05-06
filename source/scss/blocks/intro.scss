@@ -95,8 +95,8 @@
   opacity: 0;
 
   .page--loaded & {
-    animation: fadeInDown 0.4s forwards;
-    animation-delay: 2s;
+    animation: fadeInDown 1s forwards;
+    animation-delay: 1.2s;
   }
 
   @media (min-width: $stop-scaling) {
@@ -150,7 +150,7 @@
 
   .page--loaded & {
     animation: fadeIn 0.4s forwards;
-    animation-delay: 3.4s;
+    animation-delay: 2.2s;
   }
 
   @media (min-width: $stop-scaling) {

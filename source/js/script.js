@@ -26,18 +26,18 @@ fullPageScroll.init();
 const animationTexts = [
   {
     selector: `.intro__title`,
-    timer: 800
+    delay: 600
   },
   {
     selector: `.intro__date`,
-    timer: 500,
-    delay: 1800
+    delay: 1600
   },
   {
     selector: `.slider__item-title`
   },
   {
-    selector: `.prizes__title`
+    selector: `.prizes__title`,
+    delay: 600
   },
   {
     selector: `.rules__title`

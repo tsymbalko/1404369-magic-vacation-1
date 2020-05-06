@@ -1,5 +1,5 @@
 export default function prepareText(elementSelector, timer = 400, delay = 0) {
-  let timeOffset = delay + 100;
+  let timeOffset = delay + 50;
   const element = document.querySelector(elementSelector);
   if (!element) {
     return;
@@ -9,9 +9,9 @@ export default function prepareText(elementSelector, timer = 400, delay = 0) {
   const content = text.reduce((fragmentParent, word) => {
     const wordElement = Array.from(word).reduce((fragment, letter, index) => {
       if (index % 2 === 0) {
-        timeOffset += 200;
+        timeOffset += 100;
       } else {
-        timeOffset -= 100;
+        timeOffset -= 50;
       }
       fragment.appendChild(createElement(letter, timeOffset, timer));
       return fragment;
