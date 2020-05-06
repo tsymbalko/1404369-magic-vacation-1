@@ -55,3 +55,27 @@
     transform: translateX(0);
   }
 }
+
+@keyframes animationPrevControl {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px) rotate(-360deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes animationNextControl {
+  0% {
+    opacity: 0;
+    transform: translateX(60px) rotate(360deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+  }
+}
