@@ -99,12 +99,12 @@
 
   .swiper-slide-active & {
     animation: fadeInRight 0.4s forwards;
-    animation-delay: 0.4s;
+    animation-delay: 0.5s;
   }
 
   .swiper-slide-next & {
     animation: fadeInRight 0.4s forwards;
-    animation-delay: 0.6s;
+    animation-delay: 0.7s;
   }
 
   @media (min-width: $stop-scaling) {
@@ -171,11 +171,13 @@
   animation-play-state: paused;
 
   &--prev {
-    animation: animationPrevControl 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: animationPrevControl 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation-delay: 1s;
   }
 
   &.slider__control--next {
-    animation: animationNextControl 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: animationNextControl 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation-delay: 1s;
   }
 
   .active & {
