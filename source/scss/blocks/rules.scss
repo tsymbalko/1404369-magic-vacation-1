@@ -226,16 +226,6 @@
   bottom: 6rem;
   right: 5.6rem;
   border-radius: 3.5rem;
-}
-
-.rules__link {
-  display: inline-block;
-  color: transparent;
-  transform: translateX(100%);
-
-  &--active {
-    animation: rules-link 0.8s both;
-  }
 
   @media (min-width: $stop-scaling) {
     bottom: 60px;
@@ -255,6 +245,17 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     bottom: 2rem;
     right: 1.5rem;
+  }
+}
+
+.rules__link {
+  display: inline-block;
+  width: 100%;
+  color: transparent;
+  transform: translateX(100%);
+
+  &--active {
+    animation: rules-link 0.8s both;
   }
 }
 
