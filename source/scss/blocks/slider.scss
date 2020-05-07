@@ -5,6 +5,7 @@
 
   .swiper-wrapper {
     min-height: 100vh;
+    box-sizing: border-box;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(var(--vh, 1vh) * 100);
@@ -145,7 +146,6 @@
   justify-content: space-between;
   width: 17rem;
   z-index: 1;
-
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;
