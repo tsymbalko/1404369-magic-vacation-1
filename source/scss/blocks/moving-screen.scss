@@ -29,7 +29,10 @@
 }
 
 .screen--rules.screen-will-removed {
-  .screen__wrapper {
+  .rules__lead,
+  .rules__list,
+  .rules__title {
+    transform-origin: 50vw 50vh;
     animation: scaleOut 0.35s forwards;
   }
 
