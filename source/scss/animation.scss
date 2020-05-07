@@ -111,3 +111,13 @@
     opacity: 0;
   }
 }
+
+@keyframes formButton {
+  0% {
+    color: transparent;
+  }
+
+  100% {
+    color: #5f458c;
+  }
+}
