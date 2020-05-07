@@ -37,19 +37,19 @@ export default class FullPageScroll {
   changePageDisplay() {
     const currentScreen = document.querySelector(`.screen.active`);
     if (currentScreen) {
-      currentScreen.classList.add(`will-be-removed`);
+      currentScreen.classList.add(`screen-will-removed`);
     }
     this.changeActiveMenuItem();
     this.emitChangeDisplayEvent();
     setTimeout(() => {
       this.changeVisibilityDisplay();
-    }, 1000);
+    }, 500);
   }
 
   changeVisibilityDisplay() {
     this.screenElements.forEach((screen) => {
       screen.classList.add(`screen--hidden`);
-      screen.classList.remove(`active`, `will-be-removed`);
+      screen.classList.remove(`active`, `screen-will-removed`);
     });
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
     this.screenElements[this.activeScreen].classList.add(`active`);

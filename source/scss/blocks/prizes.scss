@@ -95,6 +95,7 @@
 
 .prizes__list {
   @include list-reset;
+  visibility: hidden;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;

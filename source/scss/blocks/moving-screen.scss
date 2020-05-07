@@ -9,9 +9,8 @@
   transform: scaleY(0);
   transform-origin: 100% 100%;
 
-  .screen--story.will-be-removed ~ & {
-    animation: test 0.5s forwards;
-    animation-delay: 0.2s;
+  .screen--story.screen-will-removed ~ & {
+    animation: scaleIn 0.5s forwards;
   }
 
   .screen--game.active ~ &,
@@ -21,35 +20,30 @@
   }
 }
 
-.screen--story.will-be-removed {
+.screen--story.screen-will-removed {
   z-index: 0;
-}
 
-.will-be-removed .slider,
-.will-be-removed.screen--game .screen__wrapper,
-.will-be-removed.screen--rules .screen__wrapper,
-.will-be-removed.screen--prizes .screen__wrapper {
-  animation: test2 0.35s forwards;
-}
-
-@keyframes test {
-  0% {
-    transform: scaleY(0);
-  }
-
-  100% {
-    transform: scaleY(1);
+  .slider {
+    animation: scaleOut 0.35s forwards;
   }
 }
 
-@keyframes test2 {
-  0% {
-    transform: scale(1);
-    opacity: 1;
+.screen--rules.screen-will-removed {
+  .screen__wrapper {
+    animation: scaleOut 0.35s forwards;
   }
 
-  100% {
-    transform: scale(0.92);
+  .screen__disclaimer {
+    animation: fadeInDown reverse 0.5s cubic-bezier(0.5, 1, 0.89, 1) forwards;
+  }
+}
+
+.screen--prizes.screen-will-removed {
+  .screen__wrapper {
+    animation: scaleOut 0.35s forwards;
+  }
+
+  .screen__footer-note {
     opacity: 0;
   }
 }
