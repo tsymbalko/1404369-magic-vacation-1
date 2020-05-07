@@ -7,13 +7,49 @@
   background-color: $c-dark;
   z-index: 0;
   transform: scaleY(0);
-  transition: transform 0.6s ease-in-out;
   transform-origin: 100% 100%;
 
+  .screen--story.will-be-removed ~ & {
+    animation: test 0.5s forwards;
+    animation-delay: 0.2s;
+  }
 
   .screen--game.active ~ &,
   .screen--rules.active ~ &,
   .screen--prizes.active ~ & {
     transform: scaleY(1);
+  }
+}
+
+.screen--story.will-be-removed {
+  z-index: 0;
+}
+
+.will-be-removed .slider,
+.will-be-removed.screen--game .screen__wrapper,
+.will-be-removed.screen--rules .screen__wrapper,
+.will-be-removed.screen--prizes .screen__wrapper {
+  animation: test2 0.35s forwards;
+}
+
+@keyframes test {
+  0% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes test2 {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.92);
+    opacity: 0;
   }
 }
