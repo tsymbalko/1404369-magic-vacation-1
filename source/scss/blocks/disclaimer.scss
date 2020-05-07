@@ -1,11 +1,9 @@
 .disclaimer {
   color: $c-dark;
   background-color: $c-light;
-  opacity: 0;
-  transition: opacity 0.35s cubic-bezier(0.5, 1, 0.89, 1);
 
   .active & {
-    opacity: 1;
+    animation: formButton 0.35s cubic-bezier(0.5, 1, 0.89, 1) both;
   }
 
   @media (max-width: $tablet) and (orientation: portrait) {
