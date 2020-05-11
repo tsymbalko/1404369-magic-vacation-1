@@ -45,6 +45,11 @@ export default class FullPageScroll {
     }, 500);
   }
 
+  setPrizesIcon() {
+    let element = document.querySelector(`.primary-award`);
+    element.src = element.dataset.src;
+  }
+
   changeVisibilityDisplay() {
     this.screenElements.forEach((screen) => {
       screen.classList.add(`screen--hidden`);
@@ -52,6 +57,10 @@ export default class FullPageScroll {
     });
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
     this.screenElements[this.activeScreen].classList.add(`active`);
+
+    if (this.screenElements[this.activeScreen].classList.contains(`screen--prizes`)) {
+      this.setPrizesIcon();
+    }
   }
 
   changeActiveMenuItem() {
