@@ -95,7 +95,6 @@
 
 .prizes__list {
   @include list-reset;
-  visibility: hidden;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -112,6 +111,18 @@
 
 .prizes__item {
   margin-left: 7.5rem;
+
+  &:nth-child(1) {
+    font-size: 0;
+  }
+
+  &:nth-child(2) {
+    visibility: hidden;
+  }
+
+  &:nth-child(3) {
+    visibility: hidden;
+  }
 
   @media (min-width: $stop-scaling) {
     margin-left: 75px;
