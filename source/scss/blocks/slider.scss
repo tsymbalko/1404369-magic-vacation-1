@@ -18,6 +18,7 @@
   flex-direction: column;
   padding: 14.6rem 4rem 10rem 9.7rem;
   height: auto;
+  box-sizing: border-box;
 
   @media (min-width: $stop-scaling) {
     padding: 146px 40px 100px 97px;
@@ -71,7 +72,7 @@
   font-family: $font-alt;
   font-weight: 400;
   font-size: 4.8rem;
-  line-height: 0.906;
+  line-height: 1;
   letter-spacing: -0.04em;
 
   @media (min-width: $stop-scaling) {
@@ -96,6 +97,17 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
+  opacity: 0;
+
+  .swiper-slide-active & {
+    animation: fadeInRight 0.4s forwards;
+    animation-delay: 0.5s;
+  }
+
+  .swiper-slide-next & {
+    animation: fadeInRight 0.4s forwards;
+    animation-delay: 0.7s;
+  }
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
@@ -155,6 +167,23 @@
   width: 4rem;
   height: 4rem;
   color: $c-dark;
+  transition: opacity 0.4s ease-in;
+  transform-origin: center;
+  animation-play-state: paused;
+
+  &--prev {
+    animation: animationPrevControl 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation-delay: 1s;
+  }
+
+  &.slider__control--next {
+    animation: animationNextControl 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation-delay: 1s;
+  }
+
+  .active & {
+    animation-play-state: running;
+  }
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -162,14 +191,17 @@
   }
 
   &::before {
-    @include center;
+    position: absolute;
     content: "";
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
     background-color: $c-light;
-    border: 2px solid $c-light;
     border-radius: 50%;
     z-index: -1;
+    transition: transform 0.4s ease-in;
+    transform: scale(1);
   }
 
   svg {
@@ -189,8 +221,7 @@
     color: $c-purple;
 
     &::before {
-      width: 112.5%;
-      height: 112.5%;
+      transform: scale(1.125);
     }
   }
 

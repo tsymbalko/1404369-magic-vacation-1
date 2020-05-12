@@ -32,7 +32,7 @@
 
 .form__field-wrapper {
   overflow: hidden;
-  width: calc(100% - 21rem);
+  width: calc(100% - 24rem);
   margin-right: 3rem;
   border-radius: 3.5rem;
 
@@ -99,6 +99,12 @@
 
 .form__button {
   flex-grow: 0;
+  color: transparent;
+  width: 21rem;
+
+  .active & {
+    animation: baseColorFadeIn 0.35s ease-in both;
+  }
 
   @media (orientation: portrait) {
     position: relative;

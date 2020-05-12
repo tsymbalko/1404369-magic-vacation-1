@@ -47,13 +47,9 @@
   background-color: $c-light;
   z-index: 1;
 
-  .screen--prizes.active & {
-    animation-delay: 2s;
-  }
-
   .screen--prizes.active &,
   .page--loaded .screen--intro & {
-    animation: fadeInDown 0.6s cubic-bezier(0.5, 1, 0.89, 1) both;
+    animation: fadeInDown 0.35s cubic-bezier(0.5, 1, 0.89, 1) both;
   }
 
   @media (max-width: $tablet) and (orientation: portrait) {
@@ -214,6 +210,7 @@
   text-align: center;
   font-size: 1.2rem;
   line-height: 1.2;
+  transition: opacity 0.35s cubic-bezier(0.5, 1, 0.89, 1);
 
   @media (min-width: $stop-scaling) {
     padding: 8px 0;

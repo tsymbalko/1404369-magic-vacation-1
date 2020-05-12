@@ -7,13 +7,46 @@
   background-color: $c-dark;
   z-index: 0;
   transform: scaleY(0);
-  transition: transform 0.6s ease-in-out;
   transform-origin: 100% 100%;
 
+  .screen--story.screen-will-removed ~ & {
+    animation: scaleIn 0.5s forwards;
+  }
 
   .screen--game.active ~ &,
   .screen--rules.active ~ &,
   .screen--prizes.active ~ & {
     transform: scaleY(1);
+  }
+}
+
+.screen--story.screen-will-removed {
+  z-index: 0;
+
+  .slider {
+    animation: scaleOut 0.35s forwards;
+  }
+}
+
+.screen--rules.screen-will-removed {
+  .rules__lead,
+  .rules__list,
+  .rules__title {
+    transform-origin: 50vw 50vh;
+    animation: scaleOut 0.35s forwards;
+  }
+
+  .screen__disclaimer {
+    animation: fadeInDown reverse 0.5s cubic-bezier(0.5, 1, 0.89, 1) forwards;
+  }
+}
+
+.screen--prizes.screen-will-removed {
+  .screen__wrapper {
+    animation: scaleOut 0.35s forwards;
+  }
+
+  .screen__footer-note {
+    opacity: 0;
   }
 }
