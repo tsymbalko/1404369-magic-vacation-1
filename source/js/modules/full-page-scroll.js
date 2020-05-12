@@ -47,6 +47,7 @@ export default class FullPageScroll {
 
   setPrizesIcon() {
     let element = document.querySelector(`.primary-award`);
+    // TODO add params in url for cashe
     element.src = element.dataset.src;
   }
 

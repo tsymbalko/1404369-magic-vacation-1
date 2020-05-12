@@ -31,7 +31,7 @@
       <g id="plane-air">
         <line x1="65.48" y1="110.03" x2="43.28" y2="110.03" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
           <animate
-            attributeName="scale"
+            attributeName="x2"
             from="43"
             to="38"
             dur="0.2s"
@@ -41,7 +41,7 @@
         </line>
         <line x1="65.48" y1="121.52" x2="28" y2="121.52" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
           <animate
-            attributeName="scale"
+            attributeName="x2"
             from="28"
             to="23"
             dur="0.2s"
@@ -51,7 +51,7 @@
         </line>
         <line x1="65.48" y1="131.77" x2="43.28" y2="131.77" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
           <animate
-            attributeName="scale"
+            attributeName="x2"
             from="43"
             to="38"
             dur="0.2s"
@@ -63,12 +63,13 @@
       <g id="plane-cloud-1" transform="translate(270 0)">
         <animateTransform
           attributeName="transform"
+          attributeType="XML"
           type="translate"
-          from="178"
-          to="0"
+          from="178 0"
+          to="0 0"
           dur="2s"
           fill="freeze"
-          id="start-move-cloud-1"
+          id="startMove"
           begin="0.5s"
         />
         <animate
@@ -77,14 +78,15 @@
           keyTimes="0; 0.1; 0.9; 1"
           dur="2s"
           fill="freeze"
-          begin=".5s"
+          begin="0.5s"
         />
         <line x1="28.18" y1="38.34" x2="91.09" y2="38.34" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
           <animateTransform
             attributeName="transform"
+            attributeType="XML"
             type="translate"
-            from="0"
-            to="8"
+            from="0 0"
+            to="8 0"
             dur="2s"
             fill="freeze"
             begin=".5s"
@@ -93,37 +95,39 @@
         <path d="M41.77,97.54H77.06a12.4,12.4,0,1,1,24.8,0h17.93" transform="translate(-40.77 -69.46)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
       </g>
       <g id="plane-cloud-2" transform="translate(178 0)">
+        <path d="M278.75,82.91H251.39a12.4,12.4,0,1,0-24.8,0H208.65" transform="translate(-40.77 -69.46)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+        <line x1="246.24" y1="13.45" x2="268.43" y2="13.45" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+        <line x1="218.19" y1="23.72" x2="257.97" y2="23.72" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="translate"
+            begin="startMove.begin + 1.6s"
+            from="0 0"
+            to="8 0"
+            dur="1.4s"
+            fill="freeze"
+          />
+        </line>
         <animateTransform
           attributeName="transform"
+          attributeType="XML"
           type="translate"
           from="0, 0"
           to="-166, 0"
           dur="2s"
           fill="freeze"
           id="transformCloud"
-          begin="start-move-cloud-1.begin + 1.6s"
+          begin="startMove.begin + 1.6s"
         />
         <animate
           attributeName="opacity"
+          begin="startMove.begin + 1.6s"
           values="0; 1; 1; 0"
           keyTimes="0; 0.1; 0.9; 1"
           dur="2s"
           fill="freeze"
-          begin="start-move-cloud-1.begin + 1.6s"
         />
-        <line x1="218.19" y1="23.72" x2="257.97" y2="23.72" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
-          <animateTransform
-            attributeName="transform"
-            type="translate"
-            from="0"
-            to="8"
-            dur="1.4s"
-            fill="freeze"
-            begin="start-move-cloud-1.begin + 1.6s"
-          />
-        </line>
-        <path d="M278.75,82.91H251.39a12.4,12.4,0,1,0-24.8,0H208.65" transform="translate(-40.77 -69.46)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-        <line x1="246.24" y1="13.45" x2="268.43" y2="13.45" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
       </g>
       <g>
         <path d="M162.23 157C205.61 157 237.09 141.45 237.09 120C237.09 98.55 205.61 83 162.23 83C134.29 83 106.87 96.53 88.77 107.87C86.7227 109.158 85.0354 110.943 83.866 113.06C82.6965 115.177 82.0831 117.556 82.0831 119.975C82.0831 122.394 82.6965 124.773 83.866 126.89C85.0354 129.007 86.7227 130.792 88.77 132.08C106.86 143.41 134.29 156.95 162.23 156.95" fill="#068E4D"/>
@@ -160,7 +164,7 @@
         <path d="M80.46 137.31H89.62C90.0529 137.31 90.4815 137.225 90.8813 137.059C91.2812 136.893 91.6443 136.649 91.9499 136.343C92.2556 136.036 92.4977 135.672 92.6624 135.272C92.8272 134.872 92.9113 134.443 92.91 134.01V128.3C92.9113 127.867 92.8272 127.438 92.6624 127.038C92.4977 126.638 92.2556 126.274 91.9499 125.967C91.6443 125.661 91.2812 125.417 90.8813 125.251C90.4815 125.085 90.0529 125 89.62 125H72.8C72.4499 125 72.1142 125.139 71.8666 125.387C71.6191 125.634 71.48 125.97 71.48 126.32V128.32C71.48 130.707 72.4282 132.996 74.116 134.684C75.8039 136.372 78.0931 137.32 80.48 137.32" fill="#068E4D"/>
         <path d="M80.46 137.31H89.62C90.0529 137.31 90.4815 137.225 90.8813 137.059C91.2812 136.893 91.6443 136.649 91.9499 136.343C92.2556 136.036 92.4977 135.672 92.6624 135.272C92.8272 134.872 92.9113 134.443 92.91 134.01V128.3C92.9113 127.867 92.8272 127.438 92.6624 127.038C92.4977 126.638 92.2556 126.274 91.9499 125.967C91.6443 125.661 91.2812 125.417 90.8813 125.251C90.4815 125.085 90.0529 125 89.62 125H72.8C72.4499 125 72.1142 125.139 71.8666 125.387C71.6191 125.634 71.48 125.97 71.48 126.32V128.32C71.4826 130.702 72.4293 132.985 74.1125 134.67C75.7957 136.356 78.0783 137.305 80.46 137.31V137.31Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </g>
-      <g id="mountains" transform="translate(30.000000, 206.000000)" stroke="#FFFFFF" stroke-linecap="round" stroke-width="2">
+      <g id="mountains" transform="translate(30 206)" stroke="#FFFFFF" stroke-linecap="round" stroke-width="2">
         <path d="M217.16,41.8076518 L172.1,41.8076518 L140.02,10.5076518 C139.315606,9.91232203 138.284394,9.91232203 137.58,10.5076518 L127.38,20.7376518 C126.734003,21.2962293 125.775997,21.2962293 125.13,20.7376518 L106.13,0.56765178 C105.23526,-0.18921726 103.92474,-0.18921726 103.03,0.56765178 L76.61,26.2076518 C75.9656223,26.7705612 75.0043777,26.7705612 74.36,26.2076518 L71.73,23.2876518 C71.0763737,22.6889608 70.0736263,22.6889608 69.42,23.2876518 L52.0730792,41.4276518 L8,41.9276518">
           <animate
             attributeName="d"
@@ -168,6 +172,7 @@
             to="M217.16,41.8076518 L172.1,41.8076518 L140.02,41.8076518 C139.315606,41.8076518 138.284394,41.8076518 137.58,41.8076518 L127.38,41.8076518 C126.734003,41.8076518 125.775997,41.8076518 125.13,41.8076518 L106.13,41.8076518 C105.23526,41.8076518 103.92474,41.8076518 103.03,41.8076518 L76.61,41.8076518 C75.9656223,41.8076518 75.0043777,41.8076518 74.36,41.8076518 L71.73,41.8076518 C71.0763737,41.8076518 70.0736263,41.8076518 69.42,41.8076518 L52.0730792,41.8076518 L8,41.8076518"
             dur="0.4s"
             fill="freeze"
+            id="morfMountains"
             begin="transformCloud.end - 1s"
           />
         </path>
@@ -310,7 +315,16 @@
           begin="rotateFlower.end + 0.4s"
         />
       </g>
-      <line x1="17.55" y1="224.1" x2="241.04" y2="224.1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <line x1="17.55" y1="224.1" x2="241.04" y2="224.1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" opacity="0">
+        <animate
+          attributeName="opacity"
+          from="0"
+          to="1"
+          dur="0.1s"
+          fill="freeze"
+          begin="morfMountains.end"
+        />
+      </line>
     </g>
     <g id="windows" opacity="0">
       <g id="room-clouds" transform="translate(0 70)"  clip-path="url(#window)">
