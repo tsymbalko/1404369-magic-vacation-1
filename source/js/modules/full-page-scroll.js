@@ -45,11 +45,13 @@ export default class FullPageScroll {
     }, 500);
   }
 
-  // setPrizesIcon() {
-  //   let element = document.querySelector(`.primary-award`);
-  //   // TODO add params in url for cashe
-  //   element.src = element.dataset.src;
-  // }
+  setPrizesIcon() {
+    let elements = document.querySelectorAll(`.award-icon`);
+    // TODO add params in url for cashe
+    elements.forEach((element) => {
+      element.src = element.dataset.src;
+    });
+  }
 
   changeVisibilityDisplay() {
     this.screenElements.forEach((screen) => {
@@ -59,9 +61,9 @@ export default class FullPageScroll {
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
     this.screenElements[this.activeScreen].classList.add(`active`);
 
-    // if (this.screenElements[this.activeScreen].classList.contains(`screen--prizes`)) {
-    //   this.setPrizesIcon();
-    // }
+    if (this.screenElements[this.activeScreen].classList.contains(`screen--prizes`)) {
+      this.setPrizesIcon();
+    }
   }
 
   changeActiveMenuItem() {
