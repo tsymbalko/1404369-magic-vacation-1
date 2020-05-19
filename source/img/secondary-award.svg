@@ -1,4 +1,4 @@
-<svg width="320" height="276" viewBox="0 0 320 277" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="320" height="276" viewBox="0 0 324 275" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g opacity="0">
     <animate
       attributeName="opacity"
@@ -79,7 +79,6 @@
       <g id="case" transform="scale(0 0)">
         <animateMotion
           dur="1.6s"
-          rotate="60"
           fill="freeze"
           path="M210,46 C191.123017,30.0954376 178.474401,22.3354376 172.054152,22.72 C139.5875,24.6646992 58.5772053,19.8961907 31.5049859,37.9511828 C21.5331177,44.6016167 8.41138468,70.3443262 15.5105849,87.6442742 C26.1462877,113.562279 86.4780658,101.64122 87.0377659,101.479448 C96.6418879,98.708345 142.089996,27.6199991 142.089996,27.6199991"
           begin="fadeInAir.end + 0.2s"
