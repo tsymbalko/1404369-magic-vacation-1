@@ -69,6 +69,8 @@
   border-radius: 3rem;
   outline: none;
 
+
+  .screen--show &,
   .active & {
     animation: animationFromControl 0.8s both;
   }
@@ -102,6 +104,7 @@
   color: transparent;
   width: 21rem;
 
+  .screen--show &,
   .active & {
     animation: baseColorFadeIn 0.35s ease-in both;
   }
@@ -146,28 +149,6 @@
 
     @media (max-width: $tablet) and (orientation: landscape) {
       display: block;
-    }
-  }
-}
-
-.form--result {
-  .form__field {
-    width: calc(100% - 31rem);
-
-    @media (min-width: $stop-scaling) {
-      width: calc(100% - 310px);
-    }
-
-    @media (orientation: portrait) {
-      width: calc(100% - 5rem);
-    }
-
-    @media (max-width: $tablet) and (orientation: landscape) {
-      width: calc(100% - 9rem);
-    }
-
-    @media (max-width: $mobile) and (orientation: landscape) {
-      width: calc(100% - 5rem);
     }
   }
 }
