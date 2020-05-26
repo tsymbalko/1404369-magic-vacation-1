@@ -46,6 +46,17 @@
   }
 }
 
+
+@keyframes zoomFront {
+  0% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 @keyframes animationFromControl {
   0% {
     transform: translateX(100%);
