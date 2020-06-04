@@ -1,5 +1,6 @@
 import throttle from 'lodash/throttle';
 import timer from './timer';
+import animatePrizesValue from './prizes';
 
 export default class FullPageScroll {
   constructor() {
@@ -48,7 +49,6 @@ export default class FullPageScroll {
 
   setPrizesIcon() {
     let elements = document.querySelectorAll(`.award-icon`);
-    // TODO add params in url for cashe
     elements.forEach((element) => {
       element.src = element.dataset.src;
     });
@@ -64,6 +64,9 @@ export default class FullPageScroll {
 
     if (this.screenElements[this.activeScreen].classList.contains(`screen--prizes`)) {
       this.setPrizesIcon();
+      animatePrizesValue.startAnimatePrizesValues();
+    } else {
+      animatePrizesValue.stopAnimatePrizesValues();
     }
 
     if (this.screenElements[this.activeScreen].classList.contains(`screen--game`)) {

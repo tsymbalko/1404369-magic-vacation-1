@@ -1,11 +1,16 @@
 import AnimateFrame from './animateFrame';
+import {GAME_TIMER_DURATION} from './constants';
 
 class Timer {
   constructor(duration) {
     this.duration = duration;
+    this.init = this.init.bind(this);
     this.getTimerValue = this.getTimerValue.bind(this);
     this.startAnimateTimer = this.startAnimateTimer.bind(this);
     this.stopAnimateTimer = this.stopAnimateTimer.bind(this);
+  }
+
+  init() {
     this.timer = document.querySelector(`.game__counter`);
     this.animateFrame = new AnimateFrame(this.getTimerValue, 1000 / 24, this.duration);
   }
@@ -27,6 +32,6 @@ class Timer {
   }
 }
 
-const timer = new Timer(300000);
+const timer = new Timer(GAME_TIMER_DURATION);
 
 export default timer;

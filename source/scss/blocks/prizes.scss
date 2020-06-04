@@ -304,6 +304,19 @@
     font-weight: 400;
     font-size: 12rem;
     line-height: 0.55;
+    position: relative;
+
+    &::before {
+      content: attr(data-value);
+      opacity: 0;
+    }
+
+    & > span {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 0;
+    }
 
     .active & {
       animation: fadeIn 0.4s ease-in both;
@@ -336,7 +349,7 @@
     }
   }
 
-  span {
+  .prizes__text {
     display: flex;
     align-items: flex-end;
     margin-left: 1.4rem;
