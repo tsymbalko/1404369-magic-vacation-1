@@ -18,4 +18,3 @@ export const PRIZES_SETTING_VALUE = [
     duration: 7700
   }
 ];
-
