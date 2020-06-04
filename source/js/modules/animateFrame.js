@@ -1,4 +1,3 @@
-
 export default class AnimateFrame {
   constructor(drawFrame, fpsInterval = (1000 / 60), animateDuration = 0) {
     this.drawFrame = drawFrame;

@@ -10,6 +10,8 @@ import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 import prepareText from './modules/animateText';
 import animateTitle from './modules/animateTitle';
+import timer from './modules/timer';
+import animatePrizesValue from './modules/prizes';
 
 // init modules
 mobileHeight();
@@ -24,6 +26,8 @@ animateTitle();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
+animatePrizesValue.init();
+timer.init();
 
 const animationTexts = [
   {
@@ -49,8 +53,8 @@ const animationTexts = [
   }
 ];
 
-animationTexts.forEach(({selector, timer, delay}) => {
-  prepareText(selector, timer, delay);
+animationTexts.forEach(({selector, duration, delay}) => {
+  prepareText(selector, duration, delay);
 });
 
 window.onload = () => {
